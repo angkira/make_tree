@@ -1,6 +1,7 @@
 import os
 from subprocess import call
 import sys
+import json
 def help():
     with open("readme.txt", 'r') as readme:
         for line in readme.readlines():  print(line)
@@ -23,9 +24,9 @@ def make_tree():
     for arg in ARGS:
         if ('/' in arg): path = arg     #flag set new path to project directory
     path += '/' + repeater(path, root_dir) + '/'
-    for directory in DIRS: os.mkdir(path+"/"+directory)    #make tree of directories
+    for directory in DIRS: os.mkdir(path+directory)    #make tree of directories
     for file_name in FILES:
-        with open(path+"/"+file_name, "w") as f:     #create main FILES
+        with open(path+file_name, "w") as f:     #create main FILES
             if (".html" in file_name): f.write('!')     #for Emmet
             elif (".js" in file_name): f.write('$(document).ready(main);\n\
                 var main = function(){\n/*<--script-->*/\n})')     #template
@@ -37,6 +38,6 @@ def read_flags():
             return 0
     make_tree()
 ARGS = sys.argv[1:]    #remove name of script from arguments
-DIRS = ("","css","script","img")     #list of directories to make them
-FILES = ["index.html","css/style.css","script/common.js"]     #list of FILES to make them
+with open("source.json",'r') as out: data = ''.join(out.readlines())
+DIRS,FILES = json.loads(data)['DIRS'],json.loads(data)['FILES']
 read_flags()
