@@ -5,10 +5,11 @@ def help():
     with open("readme.txt", 'r') as readme:
         for line in readme.readlines():  print(line)
 def run_editor():     #if there is "-r"-flag => run FILES
-        make_tree()
-        for arg in ARGS:
-            if arg in os.listdir('/usr/bin'): EDITOR = (arg,)
-            call(EDITOR+FILES)     #flag set new EDITOR "arg"
+    make_tree()
+    EDITOR = ["subl",]     #default EDITOR to open FILES after creation tree
+    for arg in ARGS:
+        if arg in os.listdir('/usr/bin'): EDITOR = [arg,]
+    call(EDITOR+FILES)     #flag set new EDITOR "arg"
 def repeater(path, root):
     i = 1
     main = root
@@ -32,12 +33,10 @@ def read_flags():
     flags = {'-h' : help, '--help' : help, '-r' : run_editor}
     for arg in ARGS:
         if arg in flags.keys():
-            ARGS.remove(arg)
             flags[arg]()
             return 0
     make_tree()
 ARGS = sys.argv[1:]    #remove name of script from arguments
 DIRS = ("","css","script","img")     #list of directories to make them
-EDITOR = ("subl",)     #default EDITOR to open FILES after creation tree
-FILES = ("index.html","css/style.css","script/common.js")     #list of FILES to make them
+FILES = ["index.html","css/style.css","script/common.js"]     #list of FILES to make them
 read_flags()
