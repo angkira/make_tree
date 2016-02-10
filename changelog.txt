@@ -1,0 +1,14 @@
+version 0.1.2
+changelog:
+-added source.json file with list of dirs, files
+version 0.1.1
+- create tree:
+/web_project
+/index.html
+/web_project/img
+/web_project/css/style.css
+/web_project/script.js
+-can create directories with other name if "web_project" is exist:
+/web_project_x
+/web_project_x1
+/web_project_x2
