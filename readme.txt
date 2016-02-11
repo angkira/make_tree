@@ -1,10 +1,5 @@
-!It works only on linux-based systems!
+This script create a minimal tree for website
 
-running from the console gives an oppotunity to use some flags and parametres:
-
-"-r"          to run general files in default text editor (can change in variable EDITOR)
-"-h"/"--help" to get readme
-"/PATH/"      to change directory where tree will appear
-"EDITOR"      to set custom text editor for opening (default = Sublime Text)
-
-Version: 0.1.2
+make_tree.py #editor_name = run files in #editor_name, but it have to exist in /usr/bin/
+-nr = not to run files in editor
+-h/--help = get help

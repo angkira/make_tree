@@ -7,7 +7,6 @@ def help():
         for line in readme.readlines():  print(line)
 def run_editor():     #if there is "-r"-flag => run FILES
     make_tree()
-    EDITOR = ["subl",]     #default EDITOR to open FILES after creation tree
     for arg in ARGS:
         if arg in os.listdir('/usr/bin'): EDITOR = [arg,]
     call(EDITOR+FILES)     #flag set new EDITOR "arg"
@@ -31,13 +30,14 @@ def make_tree():
             elif (".js" in file_name): f.write('$(document).ready(main);\n\
                 var main = function(){\n/*<--script-->*/\n})')     #template
 def read_flags():
-    flags = {'-h' : help, '--help' : help, '-r' : run_editor}
+    flags = {'-h': help, '--help': help, '-r': run_editor}
     for arg in ARGS:
         if arg in flags.keys():
             flags[arg]()
             return 0
     make_tree()
-ARGS = sys.argv[1:]    #remove name of script from arguments
-with open("source.json",'r') as out: data = ''.join(out.readlines())
-DIRS,FILES = json.loads(data)['DIRS'],json.loads(data)['FILES']
+ARGS = sys.argv[1:]     #remove name of script from arguments
+with open("source.json", 'r') as out: data = ''.join(out.readlines())
+       #default EDITOR to open FILES after creation tree
+EDITOR, DIRS, FILES = json.loads(data)['EDITOR'], json.loads(data)['DIRS'], json.loads(data)['FILES']
 read_flags()
