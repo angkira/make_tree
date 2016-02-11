@@ -37,7 +37,7 @@ def read_flags():
             return 0
     make_tree()
 ARGS = sys.argv[1:]     #remove name of script from arguments
-with open("source.json", 'r') as out: data = ''.join(out.readlines())
+with open("source.json", 'r') as out: data = out.read()
        #default EDITOR to open FILES after creation tree
 EDITOR, DIRS, FILES = json.loads(data)['EDITOR'], json.loads(data)['DIRS'], json.loads(data)['FILES']
 read_flags()
