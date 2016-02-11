@@ -9,4 +9,7 @@ with open("source.json",'a') as out:
     #out.read(data)
 #dirs,files = json.loads(data)['DIRS'],json.loads(data)['FILES']
 #print dirs,files
+<<<<<<< HEAD
 #94:51:a8:de:5d:2b:08:32:59:64:e9:31:fa:f2:41:1f
+=======
+>>>>>>> a5fcf35e27043345f98648208320eee82e1a0771
