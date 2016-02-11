@@ -7,14 +7,9 @@ def help():
         for line in readme.readlines():  print(line)
 def run_editor():     #if there is "-r"-flag => run FILES
     make_tree()
-<<<<<<< HEAD
     for arg in ARGS: 
         for var in VAR_PATH:
             if arg in os.listdir(var): EDITOR = [arg,]
-=======
-    for arg in ARGS:
-        if arg in os.listdir('/usr/bin'): EDITOR = [arg,]
->>>>>>> a5fcf35e27043345f98648208320eee82e1a0771
     call(EDITOR+FILES)     #flag set new EDITOR "arg"
 def repeater(path, root):
     i = 1
@@ -44,11 +39,6 @@ def read_flags():
     make_tree()
 ARGS = sys.argv[1:]     #remove name of script from arguments
 with open("source.json", 'r') as out: data = out.read()
-<<<<<<< HEAD
 EDITOR, DIRS, FILES = json.loads(data)['EDITOR'], json.loads(data)['DIRS'], json.loads(data)['FILES']
 VAR_PATH = os.environ['PATH'].split(':')
-=======
-       #default EDITOR to open FILES after creation tree
-EDITOR, DIRS, FILES = json.loads(data)['EDITOR'], json.loads(data)['DIRS'], json.loads(data)['FILES']
->>>>>>> a5fcf35e27043345f98648208320eee82e1a0771
 read_flags()
