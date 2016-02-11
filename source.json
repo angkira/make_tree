@@ -1,0 +1,16 @@
+{
+  "FILES": [
+    "index.html", 
+    "css/style.css", 
+    "script/common.js"
+  ], 
+  "DIRS": [
+    "", 
+    "css", 
+    "script", 
+    "img"
+  ], 
+  "EDITOR": [
+    "subl"
+  ]
+}
