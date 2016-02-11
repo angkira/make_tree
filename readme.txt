@@ -7,4 +7,4 @@ running from the console gives an oppotunity to use some flags and parametres:
 "/PATH/"      to change directory where tree will appear
 "EDITOR"      to set custom text editor for opening (default = Sublime Text)
 
-Version: 0.1.1
+Version: 0.1.2
