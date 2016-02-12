@@ -31,14 +31,13 @@ def make_tree():
             elif (".js" in file_name): f.write('$(document).ready(main);\n\
                 var main = function(){\n/*<--script-->*/\n})')     #template
 def read_flags():
-    flags = {'-h': help, '--help': help, '-r': run_editor}
     for arg in ARGS:
-        if arg in flags.keys():
-            flags[arg]()
+        if arg in FLAGS.keys():
+            globals()[FLAGS[arg]]()
             return 0
     make_tree()
 ARGS = sys.argv[1:]     #remove name of script from arguments
 with open("source.json", 'r') as out: data = out.read()
-EDITOR, DIRS, FILES = json.loads(data)['EDITOR'], json.loads(data)['DIRS'], json.loads(data)['FILES']
+EDITOR, DIRS, FILES, FLAGS = json.loads(data)['EDITOR'], json.loads(data)['DIRS'], json.loads(data)['FILES'], json.loads(data)['FLAGS'] 
 VAR_PATH = os.environ['PATH'].split(':')
 read_flags()

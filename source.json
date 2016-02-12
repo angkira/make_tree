@@ -10,6 +10,11 @@
     "script", 
     "img"
   ], 
+  "FLAGS": {
+    "-r": "run_editor", 
+    "-h": "help", 
+    "--help": "help"
+  }, 
   "EDITOR": [
     "subl"
   ]

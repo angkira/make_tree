@@ -1,15 +1,12 @@
 import json
-EDITOR = ["subl",]
-DIRS = ("","css","script","img")
-FILES = ["index.html","css/style.css","script/common.js"]
-data = json.dumps(dict(EDITOR = ["subl",], DIRS = ("","css","script","img"), FILES = ["index.html","css/style.css","script/common.js"]), indent=2)
-with open("source.json",'a') as out:
+#EDITOR = ["subl",]
+#DIRS = ("","css","script","img")
+#FILES = ["index.html","css/style.css","script/common.js"]
+#FLAGS = {'-h': help, '--help': help, '-r': run_editor}
+data = json.dumps(dict(FLAGS = {'-h': 'help', '--help': 'help', '-r': 'run_editor'}, EDITOR = ["subl",], DIRS = ("","css","script","img"), FILES = ["index.html","css/style.css","script/common.js"]), indent=2)
+with open("source.json",'w') as out:
     out.write(data)
 #with open("source.json",'r') as out:
     #out.read(data)
 #dirs,files = json.loads(data)['DIRS'],json.loads(data)['FILES']
 #print dirs,files
-<<<<<<< HEAD
-#94:51:a8:de:5d:2b:08:32:59:64:e9:31:fa:f2:41:1f
-=======
->>>>>>> a5fcf35e27043345f98648208320eee82e1a0771
