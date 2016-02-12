@@ -17,11 +17,11 @@ def checker(path, root):
 def make_tree():
     path = os.getcwd()    # default path to make tree is current directory
     for arg in ARGS:
-        if ('/' in arg): path = arg     #flag set new path to project directory
+        if os.path.isdir(arg): path = arg     #flag set new path to project directory
     path += '/' + checker(path, root_dir) + '/'
     for directory in DIRS: os.mkdir(path+directory)    #make tree of directories
     for file_name in FILES:
-        with open(path+file_name, "w") as f: 
+        with open(path+file_name, "w") as f:
             f.write(FILES[file_name])
     return path
 def read_flags():
@@ -29,9 +29,9 @@ def read_flags():
         if arg in FLAGS.keys():
             globals()[FLAGS[arg]]()
             return 0
-    make_tree()
+    return 1
 ARGS = sys.argv[1:]     #remove name of script from arguments
 path =''
 with open("source.json", 'r') as out: data = out.read()
 root_dir, DIRS, FILES, FLAGS = json.loads(data)['ROOT_DIR'], json.loads(data)['DIRS'], json.loads(data)['FILES'], json.loads(data)['FLAGS']
-read_flags()
+if read_flags(): make_tree()

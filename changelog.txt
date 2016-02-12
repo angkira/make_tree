@@ -1,7 +1,9 @@
+version 0.1.7
+	- some fixes in working with extra path of making tree, checking existing of custom editor
 version 0.1.6
 	- inputs of files and name of main directory now in source.json
 	- update make_json.py - now you can create source.json and change vars in python
-	- editor has gone to editor.py 
+	- editor has gone to editor.py
 	- program returns path of your project`s directory
 version 0.1.5
 	-added getting FLAGS from source.json
