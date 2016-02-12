@@ -1,3 +1,8 @@
+version 0.1.6
+	- inputs of files and name of main directory now in source.json
+	- update make_json.py - now you can create source.json and change vars in python
+	- editor has gone to editor.py 
+	- program returns path of your project`s directory
 version 0.1.5
 	-added getting FLAGS from source.json
 version 0.1.4

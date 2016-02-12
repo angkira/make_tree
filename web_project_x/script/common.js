@@ -1,4 +1,4 @@
 $(document).ready(main);
-                var main = function(){
+var main = function(){
 /*<--script-->*/
-})
+}

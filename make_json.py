@@ -1,12 +1,12 @@
 import json
-#EDITOR = ["subl",]
-#DIRS = ("","css","script","img")
-#FILES = ["index.html","css/style.css","script/common.js"]
-#FLAGS = {'-h': help, '--help': help, '-r': run_editor}
-data = json.dumps(dict(FLAGS = {'-h': 'help', '--help': 'help', '-r': 'run_editor'}, EDITOR = ["subl",], DIRS = ("","css","script","img"), FILES = ["index.html","css/style.css","script/common.js"]), indent=2)
-with open("source.json",'w') as out:
-    out.write(data)
-#with open("source.json",'r') as out:
-    #out.read(data)
-#dirs,files = json.loads(data)['DIRS'],json.loads(data)['FILES']
-#print dirs,files
+import os
+data = dict(
+ROOT_DIR	 = "web_project_x",
+EDITOR 		 = ["atom",],
+DIRS  		 = ["","css","script","img"],
+FILES  		 = {'index.html': '!','css/style.css':'','script/common.js':'$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}'},
+FLAGS  		 = {'-h': 'help', '--help': 'help', '-r': 'run'})
+data = json.dumps(data, indent=2)
+with open('source.json', 'w') as out:
+	out.write(data)
+

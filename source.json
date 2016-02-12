@@ -1,9 +1,9 @@
 {
-  "FILES": [
-    "index.html", 
-    "css/style.css", 
-    "script/common.js"
-  ], 
+  "FILES": {
+    "css/style.css": "", 
+    "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}", 
+    "index.html": "!"
+  }, 
   "DIRS": [
     "", 
     "css", 
@@ -11,11 +11,12 @@
     "img"
   ], 
   "FLAGS": {
-    "-r": "run_editor", 
+    "-r": "run", 
     "-h": "help", 
     "--help": "help"
   }, 
+  "ROOT_DIR": "web_project_x", 
   "EDITOR": [
-    "subl"
+    "atom"
   ]
 }
