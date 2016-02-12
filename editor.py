@@ -7,4 +7,4 @@ def run_editor(ARGS, path):     #if there is "-r"-flag => run FILES
 	for arg in ARGS:
 		if arg in sys.path: EDITOR = [arg,]#flag set new EDITOR "arg"
 	print (path)
-	call(EDITOR+[path+file for file in files])
+	call(EDITOR+[path+file for file in files], shell=True)

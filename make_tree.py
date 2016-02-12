@@ -18,7 +18,8 @@ def make_tree():
     path = os.getcwd()    # default path to make tree is current directory
     for arg in ARGS:
         if os.path.isdir(arg): path = arg     #flag set new path to project directory
-    path += '/' + checker(path, root_dir) + '/'
+    i = '\\' if os.name == 'nt' else '/'
+    path += i + checker(path, root_dir) + i
     for directory in DIRS: os.mkdir(path+directory)    #make tree of directories
     for file_name in FILES:
         with open(path+file_name, "w") as f:
