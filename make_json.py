@@ -9,4 +9,3 @@ FLAGS  		 = {'-h': 'help', '--help': 'help', '-r': 'run'})
 data = json.dumps(data, indent=2)
 with open('source.json', 'w') as out:
 	out.write(data)
-
