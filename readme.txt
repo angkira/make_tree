@@ -1,5 +1,13 @@
 This script create a minimal tree for website
-
-make_tree.py #editor_name = run files in #editor_name, but it have to exist in /usr/bin/
--nr = not to run files in editor
--h/--help = get help
+run this by console:
+  python make_tree.py
+  and get tree of directories which written in source.json
+You can add:
+  '-r' or '-R' or '--run'  - After creating tree there will be opened files in text editor
+  Text-editor, list of files, list of directories you can change in source.json
+  or in make_json.py, which create new json-file with settings.
+  '-s' or '-S' or '--show' - To open index.html in default browser. For linux you can change it in source.json
+  '-h' or '--help' to view HELP (this text) again
+  %PathToDirectory% - to create tree in custom directory
+  %EDITOR%          - to open files in custom editor (only with '-s')
+Soon will be added settings by dialog with user ^^

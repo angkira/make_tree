@@ -1,22 +1,28 @@
 {
-  "FILES": {
-    "css/style.css": "",
-    "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}",
-    "index.html": "!"
-  },
   "DIRS": [
     "",
     "css",
     "script",
     "img"
   ],
-  "FLAGS": {
-    "-r": "run",
-    "-h": "help",
-    "--help": "help"
+  "FILES": {
+    "index.html": "!",
+    "css/style.css": "",
+    "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}"
   },
-  "ROOT_DIR": "web_project_x",
+  "BROWSER": "firefox",
+  "FLAGS": {
+    "-s": "show",
+    "-h": "help",
+    "--show": "show",
+    "-R": "run",
+    "-r": "run",
+    "--run": "run",
+    "--help": "help",
+    "-S": "show"
+  },
   "EDITOR": [
-    "brackets"
-  ]
+    "atom"
+  ],
+  "ROOT_DIR": "web_project_x"
 }

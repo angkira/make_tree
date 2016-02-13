@@ -1,3 +1,13 @@
+version 0.2.2
+	- Some fixes
+	- New function - '-s' flag to open 'index.html' in default browser
+			(for Windows it`s your default browser, for linux you can change it in source.json)
+version 0.2.1
+	- some fixes
+version 0.2.0
+	- Now everything working on Windows!
+version 0.1.8
+	- some fixes
 version 0.1.7
 	- some fixes in working with extra path of making tree, checking existing of custom editor
 version 0.1.6

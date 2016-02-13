@@ -1,11 +1,13 @@
 import os
 from sys import argv as ARGS
 import json
-from editor import run_editor
+import apps
 def help():
     with open("readme.txt", 'r') as readme: print(readme.read())
 def run():
-    run_editor(ARGS, make_tree(path))
+    apps.run_editor(ARGS, make_tree(path))
+def show():
+    apps.open_browser(make_tree(path))
 def checker(path, root):
     index, main = 0, root
     while root in os.listdir(path):  #check is there directory with the same name as our root
