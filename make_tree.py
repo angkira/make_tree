@@ -3,7 +3,7 @@ from sys import argv as ARGS
 import json
 import apps
 def help():
-    with open("readme.txt", 'r') as readme: print(readme.read())
+    with open("help.txt", 'r') as help_text: print(readme.read())
 def run():
     apps.run_editor(ARGS, make_tree(path))
 def show():
