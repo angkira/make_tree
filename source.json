@@ -1,10 +1,16 @@
 {
-  "EDITOR": "notepad",
-  "ROOT_DIR": "web_project_x",
-  "FILES": {
-    "css/style.css": "",
-    "index.html": "!",
-    "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}"
+  "EDITOR": [
+    ""
+  ],
+  "FLAGS": {
+    "-S": "show",
+    "-R": "run",
+    "--run": "run",
+    "-h": "help",
+    "--help": "help",
+    "-r": "run",
+    "--show": "show",
+    "-s": "show"
   },
   "DIRS": [
     "",
@@ -12,15 +18,11 @@
     "script",
     "img"
   ],
-  "FLAGS": {
-    "--show": "show",
-    "-h": "help",
-    "--help": "help",
-    "--run": "run",
-    "-R": "run",
-    "-r": "run",
-    "-S": "show",
-    "-s": "show"
+  "ROOT_DIR": "web_project_x",
+  "FILES": {
+    "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}",
+    "index.html": "!",
+    "css/style.css": ""
   },
   "BROWSER": "firefox"
 }
