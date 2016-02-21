@@ -1,28 +1,28 @@
 {
-  "EDITOR": [
-    ""
-  ],
-  "FLAGS": {
-    "-S": "show",
-    "-R": "run",
-    "--run": "run",
-    "-h": "help",
-    "--help": "help",
-    "-r": "run",
-    "--show": "show",
-    "-s": "show"
-  },
-  "DIRS": [
-    "",
-    "css",
-    "script",
-    "img"
-  ],
-  "ROOT_DIR": "web_project_x",
-  "FILES": {
-    "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}",
-    "index.html": "!",
-    "css/style.css": ""
-  },
-  "BROWSER": "firefox"
+    "DIRS": [
+        "",
+        "css",
+        "script",
+        "img"
+    ],
+    "FILES": {
+        "css/style.css": "",
+        "index.html": "!",
+        "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}"
+    },
+    "BROWSER": "firefox",
+    "FLAGS": {
+        "-S": "show",
+        "-s": "show",
+        "--run": "run",
+        "--help": "help",
+        "--show": "show",
+        "-h": "help",
+        "-R": "run",
+        "-r": "run"
+    },
+    "EDITOR": [
+        ""
+    ],
+    "ROOT_DIR": "web_project_x"
 }

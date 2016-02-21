@@ -9,13 +9,6 @@ def run():  apps.run_editor(ARGS, make_tree(path))
 
 def show(): apps.open_browser(make_tree(path))
 
-
-def help():
-    with open("help.txt", 'r') as help_text: print(help_text.read())
-def run():
-    apps.run_editor(ARGS, make_tree(path))
-def show():
-    apps.open_browser(make_tree(path))
 def checker(path, root):
     index, main = 0, root
     while root in os.listdir(path):
