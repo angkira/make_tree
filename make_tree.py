@@ -2,6 +2,7 @@ import os
 from sys import argv as ARGS
 import json
 import apps
+<<<<<<< HEAD
 
 def help(): apps.help()
 
@@ -10,6 +11,14 @@ def run():  apps.run_editor(ARGS, make_tree(path))
 def show(): apps.open_browser(make_tree(path))
 
 
+=======
+def help():
+    with open("help.txt", 'r') as help_text: print(help_text.read())
+def run():
+    apps.run_editor(ARGS, make_tree(path))
+def show():
+    apps.open_browser(make_tree(path))
+>>>>>>> origin/master
 def checker(path, root):
     index, main = 0, root
     while root in os.listdir(path):
