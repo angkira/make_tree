@@ -1,28 +1,25 @@
 {
+    "ROOT_DIR": "web_project_x",
+    "EDITOR": "subl3",
+    "BROWSER": "google-chrome-beta",
+    "FLAGS": {
+        "-r": "run_editor",
+        "-S": "open_browser",
+        "--run": "run_editor",
+        "--help": "help",
+        "--show": "open_browser",
+        "-h": "help",
+        "-R": "run_editor",
+        "-s": "open_browser"
+    },
+    "FILES": {
+        "index.html": "!",
+        "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}",
+        "css/style.css": ""
+    },
     "DIRS": [
-        "",
         "css",
         "script",
         "img"
-    ],
-    "FILES": {
-        "css/style.css": "",
-        "index.html": "!",
-        "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}"
-    },
-    "BROWSER": "firefox",
-    "FLAGS": {
-        "-S": "show",
-        "-s": "show",
-        "--run": "run",
-        "--help": "help",
-        "--show": "show",
-        "-h": "help",
-        "-R": "run",
-        "-r": "run"
-    },
-    "EDITOR": [
-        ""
-    ],
-    "ROOT_DIR": "web_project_x"
+    ]
 }
