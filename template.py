@@ -10,13 +10,7 @@ data = dict(
     jade=dict(
         DIRS=["css", "script", "img"],
         FILES={'index.jade': 'extends layout',
-               'layout.jade': "doctype html\
-                                    \n\thtml\
-                                    \n\t\thead\
-                                    \n\t\t\ttitle= title\
-                                    \n\t\t\tlink(rel='stylesheet', href='/stylesheets/style.css')\
-                                    \n\t\tbody\
-                                    \n\t\t\tblock content',",
+               'layout.jade': "doctype html\n\thtml\n\t\thead\n\t\t\ttitle= title\n\t\t\tlink(rel='stylesheet', href='/stylesheets/style.css')\n\t\tbody\n\t\t\tblock content',",
                'css/style.css': "",
                'script/common.js': '$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}'
                }
@@ -24,7 +18,7 @@ data = dict(
     jade_sass=dict(
         DIRS=["css", "script", "img"],
         FILES={'index.jade': 'extends layout',
-               'layout.jade': "doctype html\n\thtml\n\t\thead\n\t\t\ttitle= title\\n\t\t\tlink(rel='stylesheet', href='/stylesheets/style.css')\n\t\tbody\n\t\t\tblock content',",
+               'layout.jade': "doctype html\n\thtml\n\t\thead\n\t\t\ttitle= title\n\t\t\tlink(rel='stylesheet', href='/stylesheets/style.css')\n\t\tbody\n\t\t\tblock content',",
                'css/style.sass': "",
                'script/common.js': '$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}'
                }
