@@ -1,0 +1,40 @@
+{
+    "simple": {
+        "FILES": {
+            "css/style.css": "", 
+            "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}", 
+            "index.html": "!"
+        }, 
+        "DIRS": [
+            "css", 
+            "script", 
+            "img"
+        ]
+    }, 
+    "jade": {
+        "FILES": {
+            "css/style.css": "", 
+            "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}", 
+            "layout.jade": "doctype html                                    \n\thtml                                    \n\t\thead                                    \n\t\t\ttitle= title                                    \n\t\t\tlink(rel='stylesheet', href='/stylesheets/style.css')                                    \n\t\tbody                                    \n\t\t\tblock content',", 
+            "index.jade": "extends layout"
+        }, 
+        "DIRS": [
+            "css", 
+            "script", 
+            "img"
+        ]
+    }, 
+    "jade_sass": {
+        "FILES": {
+            "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}", 
+            "layout.jade": "doctype html\n\thtml\n\t\thead\n\t\t\ttitle= title\\n\t\t\tlink(rel='stylesheet', href='/stylesheets/style.css')\n\t\tbody\n\t\t\tblock content',", 
+            "index.jade": "extends layout", 
+            "css/style.sass": ""
+        }, 
+        "DIRS": [
+            "css", 
+            "script", 
+            "img"
+        ]
+    }
+}

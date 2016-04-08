@@ -1,25 +1,15 @@
 {
-    "ROOT_DIR": "web_project_x",
-    "EDITOR": "subl3",
-    "BROWSER": "google-chrome-beta",
     "FLAGS": {
-        "-r": "run_editor",
-        "-S": "open_browser",
-        "--run": "run_editor",
-        "--help": "help",
-        "--show": "open_browser",
-        "-h": "help",
-        "-R": "run_editor",
-        "-s": "open_browser"
-    },
-    "FILES": {
-        "index.html": "!",
-        "script/common.js": "$(document).ready(main);\nvar main = function(){\n/*<--script-->*/\n}",
-        "css/style.css": ""
-    },
-    "DIRS": [
-        "css",
-        "script",
-        "img"
-    ]
+        "h": "help", 
+        "s": "open_browser", 
+        "S": "open_browser", 
+        "R": "run_editor", 
+        "t": "setTemplate", 
+        "-help": "help", 
+        "r": "run_editor"
+    }, 
+    "ROOT_DIR": "web_project_x", 
+    "EDITOR": "atom", 
+    "TEMPLATE": "simple", 
+    "BROWSER": "firefox"
 }
