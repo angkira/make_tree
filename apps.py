@@ -4,12 +4,12 @@ import json
 with open("source.json", 'r') as file:
     data = file.read()
 globals().update(json.loads(data))
-operations = ['run_editor', 'open_browser']
 
 
 def checkFlags(flags):
     if flags == '-help':
         help()
+        return 0
     else:
         for flag in flags:
             if flag not in FLAGS.keys():
@@ -32,7 +32,7 @@ def setTemplate():
             globals().update({'TEMPLATE': arg[1:]})
     with open('templates.json', 'r') as temp_file:
         temp_info = temp_file.read()
-        globals().update(json.loads(temp_info)[TEMPLATE])
+    globals().update(json.loads(temp_info)[TEMPLATE])
 
 
 def init(ARGS):
