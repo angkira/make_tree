@@ -9,7 +9,8 @@
             "css", 
             "script", 
             "img"
-        ]
+        ], 
+        "RUN": 1
     }, 
     "jade": {
         "FILES": {
@@ -22,7 +23,8 @@
             "css", 
             "script", 
             "img"
-        ]
+        ], 
+        "RUN": 0
     }, 
     "jade_sass": {
         "FILES": {
@@ -35,6 +37,7 @@
             "css", 
             "script", 
             "img"
-        ]
+        ], 
+        "RUN": 0
     }
 }

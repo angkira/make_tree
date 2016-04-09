@@ -6,8 +6,9 @@ You can add:
   '-r' or '-R'   - After creating tree there will be opened files in text editor
   Text-editor, list of files, list of directories you can change in source.json
   or in make_json.py, which create new json-file with settings.
-  '-s' or '-S' or '--show' - To open index.html in default browser. For linux you can change it in source.json
+  '-s' or '-S'  - To open index.html in default browser. For linux you can change it in source.json
   '-h' or '--help' to view HELP (this text) again
   %PathToDirectory% - to create tree in custom directory
-  %EDITOR%          - to open files in custom editor (only with '-s')
+  %EDITOR%          - to open files in custom editor (only with '-r')
+  +%TEMPLATE        - to choose template. Available templates you can see in "templates.json"
 Soon will be added settings by dialog with user ^^

@@ -18,12 +18,10 @@ def checkFlags(flags):
                 print("Sorry, wrong flags!")
                 help()
                 return 0
-        print('Flags are correct')
         return 1
 
 
 def readFlags(flags, ARGS):
-    print('Reading flags')
     readConfig()
     if checkFlags(flags):
         make_tree(ARGS)
@@ -32,9 +30,7 @@ def readFlags(flags, ARGS):
 
 def make_tree(ARGS):
     init(ARGS)
-    print('Initialization...')
     setTemplate()
-    print('Template is read')
     for arg in ARGS:
         if os.path.isdir(arg):
             os.chdir(arg)
@@ -55,7 +51,6 @@ def setTemplate():
     for arg in ARGS:
         if arg[0] == '+':
             globals().update({'TEMPLATE': arg[1:]})
-    print('Reading template')
     with open('templates.json', 'r') as temp_file:
         temp_info = temp_file.read()
     globals().update(json.loads(temp_info)[TEMPLATE])
@@ -79,6 +74,9 @@ def run_editor():
 
 
 def open_browser():
-    if os.name == 'nt':
-        BROWSER = 'start '
-    os.system(globals()['BROWSER']+' '+os.getcwd()+'/'+'index.html')
+    if RUN:
+        if BROWSER == '':
+            globals().update(BROWSER = 'start ' if os.name == 'nt' else 'xdg-open')
+        os.system(globals()['BROWSER']+' '+os.getcwd()+'/'+'index.html')
+    else:
+        print('Sorry, You chose JADE, so browser can`t read it')

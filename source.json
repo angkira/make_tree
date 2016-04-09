@@ -4,12 +4,11 @@
         "s": "open_browser", 
         "S": "open_browser", 
         "R": "run_editor", 
-        "t": "setTemplate", 
         "-help": "help", 
         "r": "run_editor"
     }, 
     "ROOT_DIR": "web_project_x", 
     "EDITOR": "atom", 
-    "TEMPLATE": "simple", 
-    "BROWSER": "firefox"
+    "TEMPLATE": "", 
+    "BROWSER": ""
 }
