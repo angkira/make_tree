@@ -1,14 +1,6 @@
 {
-    "FLAGS": {
-        "h": "help", 
-        "s": "open_browser", 
-        "S": "open_browser", 
-        "R": "run_editor", 
-        "-help": "help", 
-        "r": "run_editor"
-    }, 
     "ROOT_DIR": "web_project_x", 
     "EDITOR": "atom", 
-    "TEMPLATE": "", 
+    "TEMPLATE": "simple", 
     "BROWSER": ""
 }

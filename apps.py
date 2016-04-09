@@ -1,6 +1,26 @@
 import os
 import json
 
+def run_editor():
+    for arg in ARGS[1:]:
+        for folder in os.environ['PATH'].split(os.pathsep):
+            if os.path.isdir(folder) and arg in os.listdir(folder):
+                EDITOR = [folder+'/'+arg, ]
+    os.system(globals()['EDITOR']+' '+os.getcwd()+'/'+ROOT_DIR+'/'+' -n')
+
+
+def open_browser():
+    if RUN:
+        if BROWSER == '':
+            globals().update(BROWSER = 'start ' if os.name == 'nt' else 'xdg-open')
+        os.system(globals()['BROWSER']+' '+os.getcwd()+'/'+'index.html')
+    else:
+        print('Sorry, You chose JADE, so browser can`t read it')
+
+
+FLAGS = {'h': help, '-help': help,
+           'r': run_editor, 'R': run_editor,
+           's': open_browser, 'S': open_browser,}
 
 def readConfig():
     with open("source.json", 'r') as file:
@@ -22,13 +42,13 @@ def checkFlags(flags):
 
 
 def readFlags(flags, ARGS):
-    readConfig()
     if checkFlags(flags):
         make_tree(ARGS)
         for flag in flags:
-            globals()[FLAGS[flag]]()
+            FLAGS[flag]()
 
 def make_tree(ARGS):
+    readConfig()
     init(ARGS)
     setTemplate()
     for arg in ARGS:
@@ -65,18 +85,3 @@ def help():
         print(help_text.read())
 
 
-def run_editor():
-    for arg in ARGS[1:]:
-        for folder in os.environ['PATH'].split(os.pathsep):
-            if os.path.isdir(folder) and arg in os.listdir(folder):
-                EDITOR = [folder+'/'+arg, ]
-    os.system(globals()['EDITOR']+' '+os.getcwd()+'/'+ROOT_DIR+'/'+' -n')
-
-
-def open_browser():
-    if RUN:
-        if BROWSER == '':
-            globals().update(BROWSER = 'start ' if os.name == 'nt' else 'xdg-open')
-        os.system(globals()['BROWSER']+' '+os.getcwd()+'/'+'index.html')
-    else:
-        print('Sorry, You chose JADE, so browser can`t read it')
