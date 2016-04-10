@@ -1,6 +1,7 @@
 import os
 import json
 
+
 def run_editor():
     for arg in ARGS[1:]:
         for folder in os.environ['PATH'].split(os.pathsep):
@@ -12,15 +13,12 @@ def run_editor():
 def open_browser():
     if RUN:
         if BROWSER == '':
-            globals().update(BROWSER = 'start ' if os.name == 'nt' else 'xdg-open')
+            globals().update(
+                BROWSER='start ' if os.name == 'nt' else 'xdg-open')
         os.system(globals()['BROWSER']+' '+os.getcwd()+'/'+'index.html')
     else:
         print('Sorry, You chose JADE, so browser can`t read it')
 
-
-FLAGS = {'h': help, '-help': help,
-           'r': run_editor, 'R': run_editor,
-           's': open_browser, 'S': open_browser,}
 
 def readConfig():
     with open("source.json", 'r') as file:
@@ -28,13 +26,13 @@ def readConfig():
     globals().update(json.loads(data))
 
 
-def checkFlags(flags):
+def checkFlags(flags, keys):
     if flags == '-help':
         help()
         return 0
     else:
         for flag in flags:
-            if flag not in FLAGS.keys():
+            if flag not in keys:
                 print("Sorry, wrong flags!")
                 help()
                 return 0
@@ -42,10 +40,14 @@ def checkFlags(flags):
 
 
 def readFlags(flags, ARGS):
-    if checkFlags(flags):
+    FLAGS = {'h': help, '-help': help,
+             'r': run_editor, 'R': run_editor,
+             's': open_browser, 'S': open_browser, }
+    if checkFlags(flags, FLAGS.keys()):
         make_tree(ARGS)
         for flag in flags:
             FLAGS[flag]()
+
 
 def make_tree(ARGS):
     readConfig()
@@ -83,5 +85,3 @@ def init(ARGS):
 def help():
     with open("help.txt", 'r') as help_text:
         print(help_text.read())
-
-
