@@ -12,6 +12,23 @@
         ], 
         "RUN": 1
     }, 
+    "angular": {
+        "FILES": {
+            "js/app.js": "", 
+            "js/controllers.js": "", 
+            "js/directives.js": "", 
+            "js/services.js": "", 
+            "index.html": "!",
+            
+        }, 
+        "DIRS": [
+            "css", 
+            "js", 
+            "img",
+            "templates"
+        ], 
+        "RUN": 1
+    }, 
     "jade": {
         "FILES": {
             "css/style.css": "", 
